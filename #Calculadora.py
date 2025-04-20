@@ -44,12 +44,15 @@ def principio_calculadora():
         print(primer_numero * segundo_numero)
 
 
-principio_calculadora()
-
-volver_usar = input("\nQuieres volver a usarla denuevo? (Si/No) ")
-
-if volver_usar.lower == "si":
+try:
     principio_calculadora()
 
-else:
-    print("\nGracias por usar la calculadora")
+    volver_usar = input("\nQuieres volver a usarla de nuevo? (Si/No) ")
+
+    if volver_usar.lower() == "si":
+        principio_calculadora()
+
+    else:
+        print("\nGracias por usar la calculadora")
+except KeyboardInterrupt:
+    print("Adios 👋!")
