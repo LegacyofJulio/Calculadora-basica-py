@@ -19,9 +19,11 @@ def principio_calculadora():
             operacion = int(operacion)
             if operacion in [1, 2, 3, 4]:
                 break
+            else: 
+                print("Escribe una operacion valida (1-4)")
 
         except ValueError:
-            print("Escribe un operador valido (1-4)")
+            print("Para seleccionar la operacion elige del 1 al 4")
 
     while True:
         primer_numero = input("\nPrimer numero: ")
@@ -43,16 +45,17 @@ def principio_calculadora():
     elif operacion == 4:
         print(primer_numero * segundo_numero)
 
+i=0
 
-try:
-    principio_calculadora()
+while True:
 
-    volver_usar = input("\nQuieres volver a usarla de nuevo? (Si/No) ")
-
-    if volver_usar.lower() == "si":
+    if i == 0:
         principio_calculadora()
-
-    else:
-        print("\nGracias por usar la calculadora")
-except KeyboardInterrupt:
-    print("Adios 👋!")
+        i += 1
+    if i >= 1:
+        volver_usar = input("\nQuieres volver a usarla de nuevo? (Si/No) ")
+        if volver_usar.lower() == "si":
+            principio_calculadora()
+        else:
+            print("\nGracias por usar la calculadora")
+            break
